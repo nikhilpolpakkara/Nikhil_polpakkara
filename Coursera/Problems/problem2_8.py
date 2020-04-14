@@ -10,4 +10,3 @@ def problem2_8(temp_list):
     print("Average:",average)
     print("High:",max(temp_list))
     print("Low:",min(temp_list))
-    print("github")
