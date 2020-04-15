@@ -191,9 +191,11 @@ Try the following out and see what works:
 # Execute this cell to create these variables
 namelist = ["George", "Sally", "Catherine", "James", "Peggy"]
 x,y,z = "George","Sally","Catherine"
+v = "Nikhil"
 mytuple = x,y,z
 agedict = {"George":"17","Sally":"19",
              "Catherine":"18"}
+
 #%%
 # Which work (you might copy each into IPython and see whether it works)?
 namelist[1]   # yes or no
@@ -201,9 +203,9 @@ mytuple[1]    # yes or no
 agedict[1]    # yes or no      
 #%%
 # Which work?
-namelist.append("Rod")   # yes or no
-mytuple.append("Rod")    # yes or no
-agedict.append("Rod")    # yes or no
+namelist.append("Rod")   # yes or no - Yes
+mytuple.append("Rod")    # yes or no - NO
+agedict.append("Rod")    # yes or no - NO
 #%%
 # Which work?
 namelist[1]="Rod"    # yes or no
