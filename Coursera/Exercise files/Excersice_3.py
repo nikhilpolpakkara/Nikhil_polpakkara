@@ -198,9 +198,9 @@ agedict = {"George":"17","Sally":"19",
 
 #%%
 # Which work (you might copy each into IPython and see whether it works)?
-namelist[1]   # yes or no
-mytuple[1]    # yes or no
-agedict[1]    # yes or no      
+namelist[1]   # yes or no    YES
+mytuple[1]    # yes or no    YES 
+agedict[1]    # yes or no    NO  
 #%%
 # Which work?
 namelist.append("Rod")   # yes or no - Yes
@@ -266,7 +266,7 @@ def copy_file(infilename, outfilename):
     for line in infile:
         outfile.write(line)
         
-    infile.close()
+    infile.close() 
     outfile.close()
 #%%
 """
@@ -294,11 +294,11 @@ outline of what needs to be done is given as comments.
 """
 #%% 
 def write_to_file(filename, myname, myage, major):
-    # open file first
+    outfile = open(filename, "w")
     outfile.write("My name is "+ myname + " \n")
-    # write out the age and major in two lines
-    # close the file
-
+    outfile.write("My age is "+ str(myage) + " \n")
+    outfile.write("I am majoring in " + major +" \n")
+    outfile.close()
     
 #%%
 """
