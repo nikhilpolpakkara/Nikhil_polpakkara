@@ -682,16 +682,25 @@ so that each step is manageable and we don't get confused.
 Solution starter:
 """
 #%%
+
+
 def name_phone(csv_filename):
-    
-    # open the csv file here
+    import csv
+    file = open(csv_filename, 'w', newline='')
     
     while True:
         nextname = input("Enter a friend's name, press return to end: ")
         if nextname == "":
             break              # break jumps out of the loop
-        print(nextname) 
+        num = input("Enter phone number: ")
+        print(nextname)
+        print(num) 
         
+        l = []
+        l.append(nextname)
+        l.append(num)
+        csv.writer(file).writerow(l)
+    file.close()
         # add lines here to build a row (that is, a list) and append these
         # two pieces of data to it.  Write to the csv file
         
@@ -760,7 +769,7 @@ def update_csv(old_name, new_name):
     fin = open(old_name)
     fout = open(new_name,'w',newline = '')
     ct = 0
-    tot_weight = 0.0
+    tot_weight = 0.0 
     for row in csv.reader(fin):
         if row[0]!="Date":
             ct = ct + 1
