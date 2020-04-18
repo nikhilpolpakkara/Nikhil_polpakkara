@@ -96,8 +96,20 @@ Out[2]:
 Solution:
 """
 #%%
+def make_random_lis():
+    import random
+    random.seed(1)
+    random_lis = []
+    for i in range(0,10):
+        random_lis.append(random.random())
+    return random_lis
 
-
+def read_random_lis():
+    randlis1 = make_random_lis()
+    print(randlis1)
+    randlis2 = make_random_lis()
+    print(randlis2)
+    
 
 
 
@@ -223,6 +235,7 @@ print(Alphlist)
 # specifying the proper key fixes the problem
 print(Alphlist)
 Alphlist.sort(key=str.lower)
+
 print(Alphlist)
 #%%
 strlist = ['now', 'is', 'the', 'time', 'for', 'all',
@@ -322,11 +335,11 @@ def my_stats(slis):
     import statistics
     print("Mean: ", statistics.mean(slis))
     print("Median: ", statistics.median(slis))
-    print("Mode: ", statistics.mode(slis))    
-#    try:
-#        print("Mode: ", statistics.mode(slis))
-#    except statistics.StatisticsError as e:
-#        print("Mode error: ", e)
+    #print("Mode: ", statistics.mode(slis))    
+    try:
+        print("Mode: ", statistics.mode(slis))
+    except statistics.StatisticsError as e:
+        print("Mode error: ", e)
     print("Standard Deviation: ", statistics.stdev(slis))
     print("Variance: ", statistics.variance(slis))
 
@@ -375,9 +388,12 @@ Solution:
 """
 #%%
 def temp_stat(temps):
-    """ prints the average, median, std dev, and variance of temps """
-    pass # replace this pass (a do-nothing) statement with your code
-    
+    import statistics
+    print(temps)
+    print("Mean:   ",statistics.mean(temps))
+    print("Median:   ",statistics.median(temps))
+    print("Standard deviation:   ",statistics.stdev(temps))
+    print("Variance:   ",statistics.variance(temps))
 
 
 
@@ -419,8 +435,16 @@ Solution:
 """
 #%%
 def temp_stat(temps):
-    """ computes the average, median, std dev, and variance of temps """
-    pass # replace this pass (a do-nothing) statement with your code
+    import statistics
+    print(temps)
+    print("Mean:   ",statistics.mean(temps))
+    try:
+        print("Mode:   ",statistics.mode(temps))
+    except Exception as e:
+        print("Error:  ",e)
+    print("Median:   ",statistics.median(temps))
+    print("Standard deviation:   ",statistics.stdev(temps))
+    print("Variance:   ",statistics.variance(temps))
 
 
 
@@ -456,8 +480,8 @@ print("name: {0}  age: {1}  weight: {2}".format(nam2,age,wt))
 # the numbers represent the minimum characters occupied by the datum.
 out2 = "name: {0:>26}  age: {1:>4}   weight: {2:>10}"
 #%%
-print("name: {0:>26}  age: {1:>4}   weight: {2:>10}".format(nam1,age,wt))
-print("name: {0:>26}  age: {1:>4}   weight: {2:>10}".format(nam2,age,wt))
+print("name: {0:<26}  age: {1:>4}   weight: {2:>10}".format(nam1,age,wt))
+print("name: {0:<26}  age: {1:>4}   weight: {2:>10}".format(nam2,age,wt))
 #%%
 # for the float (real number), allocate 5 spaces with 2 to the right of "."
 out3 = "name: {0:>26}  age: {1:>4}   weight: {2:>5.2f}"
@@ -513,14 +537,12 @@ print("Start||{}||End".format(s))
 Solution:
 """
 s = "hello, there"
+print("Start||{0}||End".format(s))
+print("Start||{0:^25}||End".format(s))
+print("Start||{0:>25}||End".format(s))
 
 
 
-
-
-"""
-End Solution
-"""
 #%%
 
 """
