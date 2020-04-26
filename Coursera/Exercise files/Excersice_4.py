@@ -740,6 +740,7 @@ def delete_phone(which):
 
     del phones[which-1]
     print( "Deleted phone #", which)
+    show()
 
 def edit_phone():
     print("Editing")
